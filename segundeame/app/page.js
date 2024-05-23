@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 export default function Home() {
+
+  const nombre = "Cata"
+
   return (
-    <div className="">
-      <h1>
-        Hola Buenas
-      </h1>
-    </div>
+    
+    <h1>Segundeame {nombre}</h1>
   );
 }
