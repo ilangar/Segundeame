@@ -14,7 +14,18 @@ datasource db {
 }
 
 model Material {
-  id       Int    @id @default(autoincrement())
-  userId   Int
+  iDMaterial      Int    @id @default(autoincrement())
+  iDUser   Int
   material String
+  caracteristicas String
+  foto String
+  contacto String
+}
+
+model Usuarios {
+  iDUser      Int    @id @default(autoincrement())
+  nombre   String
+  apellido String
+  mail String
+  contrasena String
 }
