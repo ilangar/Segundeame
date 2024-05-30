@@ -5,7 +5,12 @@ export default function Home() {
   const nombre = "Cata"
 
   return (
-    
-    <h1>Segundeame {nombre}</h1>
+   
+    <div>
+    <HamburgerMenu />
+    {/* Resto del contenido de tu página */}
+  </div>
+
+     
   );
 }
