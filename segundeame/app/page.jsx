@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HamburgerMenu from "./components/harmburguer";
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
     <div>
     <HamburgerMenu />
     {/* Resto del contenido de tu página */}
+    <h1>Hola</h1>
   </div>
 
      
