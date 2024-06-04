@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import HamburgerMenu from './menu.jsx';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
           <nav className="flex align-center justify-center">
             <ul className="flex align-center justify-center">
               <li className="flex align-center justify-center mr-2"><a href="./perfil" className="text-white align-center justify-center">Perfil</a></li>
+              <li className="flex align-center justify-center">  </li>
             </ul>
           </nav>
         </header>
