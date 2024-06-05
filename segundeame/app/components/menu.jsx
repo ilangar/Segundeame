@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from 'react';
 
 const HamburgerMenu = () => {
@@ -8,9 +10,9 @@ const HamburgerMenu = () => {
   };
 
   return (
-    <div className="lg:hidden">
+    <div className="absolute right-0">
       <button
-        className="text-white focus:outline-none focus:text-white"
+        className="text-black focus:outline-none focus:text-black"
         onClick={toggleMenu}
       >
         <svg
