@@ -16,23 +16,23 @@ const BusquedaMateriales = ({ onSearch }) => {
     event.preventDefault();
     onSearch(searchTerm);
   }
-
+ 
   return (
-    <form onSubmit={handleSearchSubmit} className="flex items-center">
-      <input
-        type="text"
-        placeholder="Buscar materiales..."
-        value={searchTerm}
-        onChange={handleSearchChange}
-        className="border border-green-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
-      <button
-        type="submit"
-        className="bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-      >
-        Buscar
-      </button>
-    </form>
+    <div className="flex align-center justify-center mt-10">
+        <form onSubmit={handleSearchSubmit} className="flex items-center">
+          <input type="text" 
+            placeholder="Buscar materiales..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="border border-green-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-green-300"
+          />
+          <button
+            type="submit"
+            className="bg-green-200 text-white rounded-md py-2 px-4 hover:bg-green-300 focus:outline-none focus:bg-green-300">
+          Buscar</button>
+        </form>
+    </div>
+   
   )
 }
 

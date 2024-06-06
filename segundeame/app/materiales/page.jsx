@@ -1,6 +1,7 @@
 import React from 'react';
 import BusquedaMateriales from '../components/busquedaMateriales';
 
+//FALTA  onSearch={handleSearch} EN BUSQUEDAMATERIALES
 export default function MaterialesPage (){
 
     const handleSearch = () => {
@@ -8,17 +9,18 @@ export default function MaterialesPage (){
     }
 
     return(
-        <html lang="es">
+        <section className="flex align-center justify-center">
             <div>
-                {/* <BusquedaMateriales onSearch={handleSearch} /> */}
+                <BusquedaMateriales /> 
+                 
             </div>
             <div></div>
             <div></div>
             <div></div>
-            <div className="absolute align-center justify-center bottom-10 bg-green-200">
-                <a href="./subir-material" className="text-white align-center justify-center">Subir nuevo material +</a>
+            <div className="absolute align-center justify-center bottom-10 bg-green-200 hover:bg-green-300 focus:outline-none focus:bg-green-300 rounded-md py-2 px-4">
+                <a href="./subir-material" className=" text-black align-center justify-center m-4 ">Subir nuevo material</a>
             </div>
-        </html>
+        </section>
         
         
     )
