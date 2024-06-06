@@ -20,11 +20,13 @@ export default function RootLayout({ children }) {
             <a href="./"><img src="\logo.png" alt="logo de segundeame" className="h-10" /></a>
           </div>
           <nav className="flex align-center justify-center">
+
             <ul className="flex align-center justify-center mr-40">
               <li className="flex align-center justify-center mr-2"><a href="./perfil" className="text-white align-center justify-center">Perfil</a></li>
             </ul>
           </nav>
           <HamburgerMenu />
+
         </header>
         {children}
       </body>
