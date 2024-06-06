@@ -21,10 +21,10 @@ export default function RootLayout({ children }) {
           </div>
           <nav className="flex align-center justify-center">
             <ul className="flex align-center justify-center">
-              <li className="flex align-center justify-center mr-2"><a href="./perfil" className="text-white align-center justify-center">Perfil</a></li>
-              <li className="flex align-center justify-center">  </li>
+              <li className="flex align-center justify-center mr-16"><a href="./perfil" className="text-white align-center justify-center">Perfil</a></li>
             </ul>
           </nav>
+          <HamburgerMenu className="flex align-center justify-center mr-4"/>
         </header>
         {children}
       </body>
