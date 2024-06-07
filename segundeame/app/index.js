@@ -1,6 +1,6 @@
 import express from 'express'
 
-import route from './routes/materiales.route'
+import route from './routes/materiales.route.js'
 
 const app = express()
 

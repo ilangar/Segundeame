@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/materiales
+Content-Type: application/json
+
+{
+"iDUser" : 1,
+"material" : "madera",
+"caracteristicas" : "duro",
+"fotoUrl" : "."
+}
