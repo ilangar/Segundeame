@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+export { Alegreya } from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from './components/menu.jsx';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Alegreya({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Segundeame",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={inter.className}>
-        <header className="w-full flex justify-between align-center bg-green-700">
+        <header className="w-full flex justify-between align-center bg-[#31884A]">
           <div className="flex align-center justify-center  ml-2">
             <a href="./" className="flex align-center justify-center m-2"><img src="\logo.png" alt="logo de segundeame" className="h-10" /></a>
           </div>

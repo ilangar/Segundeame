@@ -24,11 +24,11 @@ const BusquedaMateriales = ({ onSearch }) => {
             placeholder="Buscar materiales..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="border border-green-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-green-300"
+            className="border border-[#80B48B] rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-green-300"
           />
           <button
             type="submit"
-            className="bg-green-200 text-white rounded-md py-2 px-4 hover:bg-green-300 focus:outline-none focus:bg-green-300">
+            className="bg-[#80B48B] text-white rounded-md py-2 px-4 hover:bg-green-300 focus:outline-none focus:bg-green-300">
           Buscar</button>
         </form>
     </div>
