@@ -4,16 +4,16 @@ export default function SubirMaterialesPage (){
         <div className="flex align-center justify-center h-[85%] w-full flex-col">
             <form action="" className="flex align-center justify-center">
                 <fieldset className="flex align-center justify-center flex-col gap-y-2">
-                    <label htmlFor="" className="block">Imagen (máximo 10)* 
+                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Imagen (máximo 10)* 
                         <input type="file" accept="image/*" multiple className="cursor-pointer" />
                     </label>
-                    <label htmlFor="" className="block">Material*
+                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Material*
+                        <input type="text" required border classNeame=""/> 
+                    </label>
+                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Descripción*
                         <input type="text" required />
                     </label>
-                    <label htmlFor="" className="block">Descripción*
-                        <input type="text" required />
-                    </label>
-                    <div className="block">
+                    <div className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
                         <label htmlFor="" className="block">Contacto:</label>
                         <div className="block">
                             <label htmlFor="" className="block">Email*
@@ -24,7 +24,7 @@ export default function SubirMaterialesPage (){
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Subir material" className="flex align-center justify-center cursor-pointer bottom-10 bg-[#80B48B]-200 hover:bg-green-300 focus:outline-none focus:bg-green-300 rounded-md py-2 px-4" />
+                    <input type="submit" value="Subir material" className="flex align-center justify-center cursor-pointer hover:text-with focus:outline-none" />
                 </fieldset>
             </form>
         </div>

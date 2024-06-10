@@ -20,11 +20,11 @@ const HamburgerMenu = () => {
       </button>
       {isOpen && (
         <div className="bg-[#80B48B] absolute top-full right-0 ">
-          <a href="./materiales" className="block text-black py-4 px-6 mr-8">Materiales</a>
-          <a href="#" className="block text-black py-4 px-6">IA</a>
-          <a href="#" className="block text-black py-4 px-6">ONGs</a>
-          <a href="#" className="block text-black py-4 px-6">Fotos</a>
-          <a href="#" className="block text-black py-4 px-6">Ayuda</a>
+          <a href="./materiales" className="block text-black py-4 px-6 mr-8 cursor-pointer hover">Materiales</a>
+          <a href="#" className="block text-black py-4 px-6 cursor-pointer">IA</a>
+          <a href="#" className="block text-black py-4 px-6 cursor-pointer">ONGs</a>
+          <a href="#" className="block text-black py-4 px-6 cursor-pointer">Fotos</a>
+          <a href="#" className="block text-black py-4 px-6 cursor-pointer">Ayuda</a>
         </div>
       )}
     </div>

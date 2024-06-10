@@ -1,4 +1,4 @@
-export { Alegreya } from "next/font/google";
+import { Alegreya } from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from './components/menu.jsx';
 
