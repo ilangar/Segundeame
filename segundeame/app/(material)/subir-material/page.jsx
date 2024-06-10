@@ -1,7 +1,7 @@
 export default function SubirMaterialesPage (){
     return(
-        <main>
-        <div className="flex align-center justify-center h-[85%] w-full flex-col">
+        <main className="h-full">
+        <div className="flex align-center justify-center h-full w-full flex-col">
             <form action="" className="flex align-center justify-center">
                 <fieldset className="flex align-center justify-center flex-col gap-y-2">
                     <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Imagen (máximo 10)* 
@@ -24,7 +24,7 @@ export default function SubirMaterialesPage (){
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Subir material" className="flex align-center justify-center cursor-pointer hover:text-with focus:outline-none" />
+                    <input type="submit" value="Subir material" className=" text-white flex align-center justify-center bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4" />
                 </fieldset>
             </form>
         </div>

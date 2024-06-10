@@ -12,16 +12,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className="text-xl">
       <body className={inter.className}>
-        <header className="w-full flex justify-between align-center bg-[#31884A]">
+        <header className="w-full flex justify-between align-center bg-[#31884A] text-xl">
           <div className="flex align-center justify-center  ml-2">
             <a href="./" className="flex align-center justify-center m-2"><img src="\logo.png" alt="logo de segundeame" className="h-10" /></a>
           </div>
           <nav className="flex align-center justify-center">
 
             <ul className="flex align-center justify-center mr-40">
-              <li className="flex align-center justify-center m-4"><a href="./perfil" className="text-white flex align-center justify-center">Perfil</a></li>
+              <li className="flex align-center justify-center m-4"><a href="./perfil" className="text-white hover:text-[black] flex align-center justify-center">Perfil</a></li>
             </ul>
           </nav>
           <HamburgerMenu/>
