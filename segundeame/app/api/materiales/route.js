@@ -9,11 +9,4 @@ router.get('/materiales', async (req, res) =>{
     res.json(material)
 })
 
-router.post('/materiales', async (req, res) => {
-    const newMaterial = await prisma.material.create({
-        data: req.body, 
-    })
-    res.json(newMaterial)
-})
-
 export default router;
