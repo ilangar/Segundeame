@@ -1,26 +1,26 @@
 export default function SubirMaterialesPage (){
     return(
-        <main className="h-full">
-        <div className="flex align-center justify-center h-full w-full flex-col">
+        <main className="h-full overflow-hidden">
+        <div className="flex align-center justify-center h-full w-full flex-col overflow-hidden">
             <form action="" className="flex align-center justify-center">
                 <fieldset className="flex align-center justify-center flex-col gap-y-2">
                     <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Imagen (máximo 10)* 
                         <input type="file" accept="image/*" multiple className="cursor-pointer" />
                     </label>
-                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Material*
-                        <input type="text" required border classNeame=""/> 
+                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
+                        <input type="text" required placeholder="Materiales*" classNeame=""/> 
                     </label>
-                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Descripción*
-                        <input type="text" required />
+                    <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
+                        <input type="text" required placeholder="Descripción*"/>
                     </label>
                     <div className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
                         <label htmlFor="" className="block">Contacto:</label>
                         <div className="block">
-                            <label htmlFor="" className="block">Email*
-                                <input type="email" required />
+                            <label htmlFor="" className="block">
+                                <input type="email" required placeholder="Email*"/>
                             </label>
-                            <label htmlFor="" className="block">Teléfono
-                                <input type="tel" />
+                            <label htmlFor="" className="block">
+                                <input type="tel" placeholder="Telefono"/>
                             </label>
                         </div>
                     </div>
