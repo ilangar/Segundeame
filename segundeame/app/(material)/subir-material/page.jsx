@@ -1,6 +1,6 @@
 export default function SubirMaterialesPage (){
     return(
-        <main className="h-full overflow-hidden">
+        <main className="h-full">
         <div className="flex align-center justify-center h-full w-full flex-col overflow-hidden">
             <form action="" className="flex align-center justify-center">
                 <fieldset className="flex align-center justify-center flex-col gap-y-2">
