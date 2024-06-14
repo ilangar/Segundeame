@@ -1,7 +1,7 @@
 export default function SubirMaterialesPage (){
     return(
-        <main className="h-full">
-        <div className="flex align-center justify-center h-full w-full flex-col overflow-hidden">
+        <main className="">
+        <div className="flex align-center justify-center w-full flex-col overflow-hidden">
             <form action="" className="flex align-center justify-center">
                 <fieldset className="flex align-center justify-center flex-col gap-y-2">
                     <label htmlFor="" className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">Imagen (máximo 10)* 
