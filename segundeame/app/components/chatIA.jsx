@@ -28,29 +28,29 @@ const ChatIA = ({ onSearch }) => {
  
   return (
     
-    <div className="flex align-center justify-center flex-col ">
-      <div>
+    <div className="flex align-center justify-center flex-col   ">
+      <div className="fixed left-1/2 top-32 -translate-x-1/2 items-center ">
         {send ? (
-          <h1 className="flex align-center justify-center mt-10">Respuesta</h1>   
+          <h1 >Respuesta</h1>   
         ):(
-          <h1 className="flex align-center justify-center mt-10 w-[400px]">Cuentale a nuestra IA que proyecto quieres realizar para que te responda ocn los materiales necesarios y los pasos para realizarlo</h1>
+          <h1 className="flex text-center rounded-lg py-2 px-4 w-[400px] bg-[#80B48B]">Cuentale a nuestra IA que proyecto quieres realizar para que te responda ocn los materiales necesarios y los pasos para realizarlo</h1>
          )}
         </div>
-        <form onSubmit={handleSearchSubmit} className="flex items-center">
-          
-          <input type="text" 
+        
+        <form onSubmit={handleSearchSubmit} className=" flex align-center items-center">
+          <div className=" fixed bottom-4 left-1/2 -translate-x-1/2 items-center">
+            <input type="text" 
             placeholder="Qué necesitas..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className=" flex ml-7 mb- py-2 px-40 focus:outline-none focus:ring-2 focus:ring-[#6C9675] drop-shadow-md"
+            className=" py-2 w-40 focus:outline-none drop-shadow-md rounded-l-lg"
           />
           <button
             type="submit"
-            className=" mb-[px] bg-white py-2 px-4 hover:bg-[#80B48B] focus:outline-none drop-shadow-md"
+            className=" bg-white py-2 px-4 hover:bg-[#80B48B] focus:outline-none drop-shadow-md rounded-r-lg"
             onClick = {handleSend}
-            >
-            
-          Enviar</button>
+            >Enviar</button>
+          </div>
         </form>
     </div>
   )
