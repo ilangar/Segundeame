@@ -1,9 +1,13 @@
-POST http://localhost:3000/api/materiales
+POST http://localhost:3000/api/materiales/crear
 Content-Type: application/json
 
 {
-"iDUser" : 2,
+"iDUser" : 3,
 "material" : "madera",
 "caracteristicas" : "duro",
-"fotoUrl" : "."
+"fotoUrl" : "prueba"
 }
+ 
+###
+GET  http://localhost:3000/api/materiales/ver
+Content-Type: application/json

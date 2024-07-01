@@ -1,14 +1,19 @@
-import { Router } from "express";
-import {PrismaClient} from '@prisma/client'
+import { NextRequest, NextResponse } from 'next/server';
+import {prisma} from '@/db';
 
-const router = Router()
-const prisma = new PrismaClient();
-
-router.post('/materiales', async (req, res) => {
-    const newMaterial = await prisma.material.create({
-        data: req.body, 
-    })
-    res.json(newMaterial)
-})
-
-export default router;
+export async function POST(req, res) {
+    try {
+        const body = await req.json();
+        const newMaterial = await prisma.material.create({
+            data: {
+                iDUser: body.iDUser,
+                material: body.material,
+                caracteristicas: body.caracteristicas,
+                fotoUrl: body.fotoUrl,
+            },
+        });
+        return NextResponse.json({message: newMaterial}, {status:201});
+    } catch (error) {
+        return NextResponse.json({ error: error }, {status: 400});
+    }
+}

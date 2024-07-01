@@ -5,8 +5,10 @@ export default function Home() {
   return (
    
   <div>
-    {/* Resto del contenido de tu página */}
-    <h1>Hola</h1>
+    <div className=" fixed top-12 left-1/2 -translate-x-1/2 items-center bg-black h-40 w-full mt-10">
+      <img src="\logo.png" alt="logo de segundeame" className="h-20"/>
+    </div>
+    
   </div>
 
      
