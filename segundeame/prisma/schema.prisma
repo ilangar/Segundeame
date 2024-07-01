@@ -21,6 +21,8 @@ model Material {
   iDUser   Int
   material String
   caracteristicas String
+  email String
+  telefono Int
   fotoUrl String
 }
 
