@@ -1,12 +1,11 @@
-import { PrismaClient } from '@prisma/client';
-import { NextRequest, NextResponse } from 'next/server';
-import {prisma} from '@/db';
+import { NextResponse } from 'next/server';
+import { prisma } from '@/db';
 
-export async function GET(req, res) {
+export async function GET(req) {
     try {
         const newMaterial = await prisma.material.findMany();
-        return NextResponse.json({message: newMaterial}, {status:201});
+        return NextResponse.json({ message: newMaterial }, { status: 200 });
     } catch (error) {
-        return NextResponse.json({ error: error }, {status: 400});
+        return NextResponse.json({ error: error.message }, { status: 400 });
     }
 }

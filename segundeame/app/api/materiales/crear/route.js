@@ -11,7 +11,7 @@ export async function POST(req, res) {
                 material: body.material,
                 caracteristicas: body.caracteristicas,
                 email: body.email,
-                telefono: body.telefono,
+                telefono: parseInt(body.telefono),
                 fotoUrl: body.fotoUrl,
             },
         });
