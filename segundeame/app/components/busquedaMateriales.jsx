@@ -1,10 +1,9 @@
 "use client"
+import { useState, useEffect } from 'react';
 
-import React, { useState, useEffect } from 'react';
-
-const BusquedaMateriales = () => {
+const BusquedaMateriales = ({ setMateriales }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [materiales, setMateriales] = useState([]);
+  const [materiales, setMaterialesLocal] = useState([]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -19,15 +18,19 @@ const BusquedaMateriales = () => {
     try {
       const response = await fetch('/api/materiales');
       const data = await response.json();
-      setMateriales(data);
+      setMateriales(data); // Actualiza el estado de materiales en MaterialesPage
+      setMaterialesLocal(data); // Actualiza localmente en BusquedaMateriales
     } catch (error) {
       console.error('Error al obtener los materiales:', error);
     }
   }
 
   useEffect(() => {
-    fetchMateriales();
-  }, []);
+    // Verificar si estamos en el cliente antes de hacer la llamada
+    if (typeof window !== 'undefined') {
+      fetchMateriales();
+    }
+  }, []); // El arreglo vacío [] asegura que este efecto se ejecute solo una vez en el cliente
 
   return (
     <div className="flex align-center justify-center mt-10">
