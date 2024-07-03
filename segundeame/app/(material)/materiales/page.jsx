@@ -14,7 +14,7 @@ export default function MaterialesPage() {
     <section className="flex align-center justify-center">
       <div>
         <DynamicBusquedaMateriales />
-        {/* Aquí puedes mantener cualquier otra estructura de tu página */}
+        {DynamicBusquedaMateriales}
         <div></div>
         <div></div>
         <div></div>

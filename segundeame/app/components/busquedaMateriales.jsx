@@ -1,22 +1,29 @@
 "use client"
 import { useState, useEffect } from 'react';
+import {GET} from "../api/materiales/ver/route"
 
 const BusquedaMateriales = ({ setMateriales }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [materiales, setMaterialesLocal] = useState([]);
 
+
+  // const info = await GET("metal");
+  // Aquí transformamos el objeto info en una cadena de texto
+  // const infoString = JSON.stringify(info);
+  // console.log(infoString);
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   }
 
-  const handleSearchSubmit = async (event) => {
+  const handleSearchSubmit = (event) => {
     event.preventDefault();
-    await fetchMateriales();
+    fetchMateriales();
   }
 
   const fetchMateriales = async () => {
     try {
-      const response = await fetch('/api/materiales');
+      const response = await fetch('/api/materiales/ver/');
       const data = await response.json();
       setMateriales(data); // Actualiza el estado de materiales en MaterialesPage
       setMaterialesLocal(data); // Actualiza localmente en BusquedaMateriales
@@ -24,6 +31,21 @@ const BusquedaMateriales = ({ setMateriales }) => {
       console.error('Error al obtener los materiales:', error);
     }
   }
+
+  async function fetchDataAndLog(parameter) {
+    try {
+        const info = await GET("metal");
+        console.log('Respuesta de GET:', info); // Verificar la respuesta de GET
+
+        // Aquí transformamos el objeto info en una cadena de texto
+        const infoString = JSON.stringify(info);
+        console.log(infoString);
+        return infoString
+    } catch (error) {
+        console.error('Error al obtener información:', error);
+    }
+}
+
 
   useEffect(() => {
     // Verificar si estamos en el cliente antes de hacer la llamada
@@ -43,6 +65,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
           className="border border-[#80B48B] rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-[#6C9675] drop-shadow-md"
         />
         <button
+        onClick = {fetchDataAndLog}
           type="submit"
           className="bg-[#80B48B] text-white rounded-md py-2 px-4 hover:bg-[#6C9675] focus:outline-none focus:bg-[#6C9675] drop-shadow-md">
           Buscar
