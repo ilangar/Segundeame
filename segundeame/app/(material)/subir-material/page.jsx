@@ -42,7 +42,7 @@ export default function SubirMaterialesPage() {
 
     return (
         <main className="">
-            <div className="flex align-center justify-center w-full flex-col overflow-hidden">
+            <div className=" mt-10 flex align-center justify-center w-full flex-col overflow-hidden">
                 <form onSubmit={handleSubmit} className="flex align-center justify-center">
                     <fieldset className="flex align-center justify-center flex-col gap-y-2">
                         <label className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
@@ -63,6 +63,7 @@ export default function SubirMaterialesPage() {
                                 className="" 
                                 value={material} 
                                 onChange={(e) => setMaterial(e.target.value)}
+                                className="focus:outline-none"
                             />
                         </label>
                         <label className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
@@ -72,18 +73,20 @@ export default function SubirMaterialesPage() {
                                 placeholder="Descripción*" 
                                 value={caracteristicas}
                                 onChange={(e) => setCaracteristicas(e.target.value)}
+                                className="focus:outline-none"
                             />
                         </label>
-                        <div className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
+                        <div className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2 ">
                             <label className="block">Contacto:</label>
-                            <div className="block">
-                                <label className="block">
+                            <div className="block ">
+                                <label className="block focus:outline-none ">
                                     <input 
                                         type="email" 
                                         required 
                                         placeholder="Email*" 
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
+                                        className="focus:outline-none"
                                     />
                                 </label>
                                 <label className="block">
@@ -92,6 +95,8 @@ export default function SubirMaterialesPage() {
                                         placeholder="Telefono" 
                                         value={telefono}
                                         onChange={(e) => setTelefono(e.target.value)}
+                                        className="focus:outline-none"
+
                                     />
                                 </label>
                             </div>
@@ -99,7 +104,7 @@ export default function SubirMaterialesPage() {
                         <input 
                             type="submit" 
                             value="Subir material" 
-                            className=" text-white flex align-center justify-center bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4" 
+                            className=" text-white bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4" 
                         />
                     </fieldset>
                 </form>
