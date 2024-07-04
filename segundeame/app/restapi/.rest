@@ -13,3 +13,28 @@ Content-Type: application/json
 ###
 GET  http://localhost:3000/api/materiales/ver
 Content-Type: application/json
+
+###
+POST http://localhost:3000/api/ia/enviarMensajeUsuario
+Content-Type: application/json
+
+{
+"iDUser" : 3,
+"mensajeUsuario" : "hola",
+}
+
+###
+GET  http://localhost:3000/api/ia/verMensajeUsuario
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/ia/enviarMensajeBot
+Content-Type: application/json
+
+{
+
+}
+
+###
+GET  http://localhost:3000/api/ia/verMensajeBot
+Content-Type: application/json

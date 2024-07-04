@@ -34,3 +34,10 @@ model Usuarios {
   telefono Int
   contrasena String
 }
+
+model ChatBot{
+  iDChat Int @id@default(autoincrement())
+  iDUser Int
+  mensajeUsuario String
+  mensajeBot String
+}
