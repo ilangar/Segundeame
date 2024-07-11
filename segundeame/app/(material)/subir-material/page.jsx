@@ -13,7 +13,6 @@ export default function SubirMaterialesPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         
         const data = {
             iDUser,

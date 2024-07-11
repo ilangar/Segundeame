@@ -9,7 +9,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
+ 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     fetchMateriales();
@@ -25,19 +25,6 @@ const BusquedaMateriales = ({ setMateriales }) => {
       console.error('Error al obtener los materiales:', error);
     }
   };
-
-  async function fetchDataAndLog() {
-    try {
-      const info = await GET("metal");
-      console.log('Respuesta de GET:', info);
-
-      const infoString = JSON.stringify(info);
-      console.log(infoString);
-      return infoString;
-    } catch (error) {
-      console.error('Error al obtener información:', error);
-    }
-  }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
