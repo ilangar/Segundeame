@@ -8,6 +8,7 @@ export async function POST(req, res) {
             data: {
                 iDUser: body.iDUser,
                 mensajeUsuario: body.mensajeUsuario,
+                mensajeBot: body.mensajeBot,
             },
         });
 

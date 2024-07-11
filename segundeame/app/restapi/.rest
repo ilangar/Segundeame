@@ -19,8 +19,9 @@ POST http://localhost:3000/api/ia/enviarMensajeUsuario
 Content-Type: application/json
 
 {
-"iDUser" : 3,
-"mensajeUsuario" : "hola",
+    "iDUser" : 3,
+    "mensajeUsuario" : "hola",
+    "mensajeBot": ""
 }
 
 ###
