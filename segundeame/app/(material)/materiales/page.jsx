@@ -12,7 +12,7 @@ const DynamicBusquedaMateriales = dynamic(() => import('../../components/Busqued
 const materiales = [
   { material: "carton", caracteristicas: " es fuerte"},
   { material: "metal", caracteristicas: " es mas fuerte"},
-  { material: "carton", caracteristicas: " es fuerte"},
+  { material: "carton", caracteristicas: " es super"},
   { material: "carton", caracteristicas: " es fuerte"},
   { material: "carton", caracteristicas: " es fuerte"}
 ]
@@ -21,26 +21,24 @@ const materiales = [
 export default function MaterialesPage() {
   return (
     <section className="flex align-center justify-center">
-      <div>
+      <div className="flex align-center justify-center">
 
         <BusquedaMateriales />
         
-        <div className="absolute align-center justify-center bottom-10 bg-[#80B48B] hover:bg-[#6C9675] focus:outline-none focus:bg-green-300 rounded-md py-2 px-4">
-          <a href="./subir-material" className=" text-white align-center justify-center m-4 ">Subir nuevo material</a>
+        <div className="absolute aling-center bottom-10 bg-[#80B48B] hover:bg-[#6C9675] focus:outline-none focus:bg-green-300 rounded-md py-2 px-4">
+          <a href="./subir-material" className="text-white">Subir nuevo material</a>
         </div>
-
-        
-          
-            {
-              materiales.map((material, index) =>(
-                <div className="bg-lightgreen text-white m-4 rounded-full inline-block flex items-center">
-                  <span className="ml-4">{material.material} </span>
-                  <span>{material.caracteristicas}</span>
-                </div>
-                
-                
+        <div>
+          {
+            materiales.map((material, index) =>(
+              <div className="bg-lightgreen text-white m-4 p-2 rounded-full inline-block flex items-center">
+                <span className="ml-4">{material.material} </span>
+                <span>{material.caracteristicas}</span>
+              </div>        
               )) 
-            }
+          }
+        </div>
+        
             
           
       </div>

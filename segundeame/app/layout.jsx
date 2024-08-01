@@ -18,12 +18,7 @@ export default function RootLayout({ children }) {
           <div className="flex align-center justify-center  ml-2">
             <a href="./" className="flex align-center justify-center m-2"><img src="\logo.png" alt="logo de segundeame" className="h-10" /></a>
           </div>
-          <nav className="flex align-center justify-center">
-
-            <ul className="flex align-center justify-center">
-              <li className="flex align-center justify-center mt-3 mr-20"><a href="./perfil" className="text-white hover:text-[black] flex align-center justify-center">Perfil</a></li>
-            </ul>
-          </nav>
+          
           <HamburgerMenu/>
 
         </header>

@@ -33,7 +33,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
   }, []);
 
   return (
-    <div className="flex align-center justify-center mt-10">
+    <div className="flex align-center justify-center top-8">
       <form onSubmit={handleSearchSubmit} className="flex items-center">
         <input
           type="text"
