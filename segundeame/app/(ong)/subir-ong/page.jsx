@@ -43,7 +43,7 @@ export default function ONGs() {
                     </div>
                     <input 
                         type="submit" 
-                        value="Subirpedido" 
+                        value="Subir pedido" 
                         className=" text-white bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4" 
                     />
                 </fieldset>
