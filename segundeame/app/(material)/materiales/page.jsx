@@ -21,7 +21,7 @@ const materiales = [
 export default function MaterialesPage() {
   return (
     <section className="flex align-center justify-center">
-      <div className="flex align-center justify-center">
+      <div className="block mt-4">
 
         <BusquedaMateriales />
         
@@ -31,9 +31,9 @@ export default function MaterialesPage() {
         <div>
           {
             materiales.map((material, index) =>(
-              <div className="bg-lightgreen text-white m-4 p-2 rounded-full inline-block flex items-center">
-                <span className="ml-4">{material.material} </span>
-                <span>{material.caracteristicas}</span>
+              <div className="bg-lightgreen text-white m-4 p-2 rounded-full inline">
+                <span className="m-4 text-lg">{material.material} </span>
+                <span className="mr-4">{material.caracteristicas}</span>
               </div>        
               )) 
           }
