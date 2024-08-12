@@ -6,7 +6,7 @@ export default function IA() {
      
     <div className="bg-[#6C9675] h-[90.1%]">
       <div >
-        <ChatIA/>
+        <ChatIA onSearch={}/>
       </div>
     </div>
   
