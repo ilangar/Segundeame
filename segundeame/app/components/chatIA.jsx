@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
  
 
-const ChatIA = ({ onSearch }) => {
+const ChatIA = ({ onSearch = null }) => {
   const [send, setSend] = useState(false)
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -55,7 +55,7 @@ const ChatIA = ({ onSearch }) => {
     <div className="flex align-center justify-center flex-col   ">
       <div className="fixed left-1/2 top-32 -translate-x-1/2 items-center ">
         {send ? (
-          <p  id="responseText"></p>   
+          <p  id="responseText"> {result} </p>   
         ):(
           <h1 className="flex text-center rounded-lg py-2 w-[520px] bg-[#80B48B]">Cuentale a nuestra IA que proyecto quieres realizar para que te responda ocn los materiales necesarios y los pasos para realizarlo</h1>
          )}
