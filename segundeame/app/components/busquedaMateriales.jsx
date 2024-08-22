@@ -17,9 +17,15 @@ const BusquedaMateriales = ({ setMateriales }) => {
 
   const fetchMateriales = async () => {
     try {
-      const response = await fetch('/api/materiales/ver/');
+      const response = await fetch('/api/materiales/ver/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ busqueda: searchTerm }),
+      });
       const data = await response.json();
-      setMateriales(data); // Actualiza el estado de materiales en MaterialesPage
+      // Actualiza el estado de materiales en MaterialesPage
       setMaterialesLocal(data); // Actualiza localmente en BusquedaMateriales
     } catch (error) {
       console.error('Error al obtener los materiales:', error);

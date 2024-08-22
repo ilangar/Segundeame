@@ -15,6 +15,14 @@ GET  http://localhost:3000/api/materiales/ver
 Content-Type: application/json
 
 ###
+POST  http://localhost:3000/api/materiales/ver
+Content-Type: application/json
+
+{
+    "busqueda": "metal"
+}
+
+###
 POST http://localhost:3000/api/ia/enviarMensajeUsuario
 Content-Type: application/json
 
