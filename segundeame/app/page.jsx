@@ -25,10 +25,14 @@ export default function Home() {
       <div className="absolute top-12 left-1/2 -translate-x-1/2 items-center bg-transparent h-40 w-full mt-10 pl-8">
         <img src="\logo.png" alt="logo de segundeame" className="h-20"/>
         <p className="text-white ml-4 text-xl">Te segundeamos para que vos puedas ayudar al planeta</p>
-      </div>
-      <a href="./ayuda" className="flex align-center justify-center m-2 bg-[#80B48B] text-white rounded-md py-2 px-4 hover:bg-[#6C9675] focus:outline-none focus:bg-[#6C9675] drop-shadow-md"> ¿Cómo usar Segundeame?
-      </a>
+      </div>        
+        
     </div>
+    
+    <div className="absolute aling-center bottom-10 bg-[#80B48B] hover:bg-[#6C9675] focus:outline-none focus:bg-green-300 rounded-md py-2 px-4">
+      <a href="./ayuda" className="text-white">¿Cómo usar Segundeame?</a>
+    </div>
+    <a href="./../ayuda" className=" bg-[#80B48B] py-2 px-4 text-white focus:outline-none drop-shadow-md rounded-lg"> ¿Cómo usar Segundeame?</a>
   </main>
 
      
