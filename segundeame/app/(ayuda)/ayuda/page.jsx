@@ -2,10 +2,10 @@ export default function Ayuda() {
   
     return (
      
-    <div>
+    <div className="bg-[#FBF8F4] h-full">
       <h1>¿Qué es segundeame?</h1>
-      <p> Sgundeame es para quienes están interesados en reciclar, pero no encuentran opciones accesibles. Esta es una página web que viene a solucionar  gracias a la IA, una de las mejores relacionadas con el reciclaje y manualidades. 
-Segundeame es un proyecto que busca facilitar el reciclaje.   </p>
+      <p> Segundeame es un proyecto creado para quienes están interesados en reciclar pero no encuentran opciones accesibles. Su idea principal es reducir la cantidad de desechos al ofrecer una plataforma web donde los objetos pueden encontrar un segundo propósito. A través de nuestra IA, una de las mejores en el ámbito del reciclaje y manualidades, los usuarios pueden aprender y compartir ideas sobre cómo reutilizar materiales de manera creativa. Segundeame viene a resolver el problema de la acumulación de residuos al conectar a quienes desean reciclar con quienes tienen materiales para reutilizar.
+      </p>
       <h1>¿Cómo usar la IA?</h1>
       <p></p>
       <h1>¿Cómo buscar y pedir materiales?</h1>

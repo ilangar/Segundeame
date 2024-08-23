@@ -11,7 +11,7 @@ const HamburgerMenu = () => {
   };
 
   return (
-    <div className="absolute right-0">
+    <div className="absolute right-0 top-0 z-49">
       <button
         className="text-black focus:outline-none"
         onClick={toggleMenu}
@@ -19,7 +19,7 @@ const HamburgerMenu = () => {
         <img className="h-6 w-6 mt-5 mr-5" src="./menu-hamburguesa.png" alt="Icono del menu hamburguesa" />
       </button>
       {isOpen && (
-        <div className="bg-[#6C9675] absolute top-full right-0 ">
+        <div className="bg-[#2F653E] absolute top-full right-0 z-50">
           <a href="./materiales" className="block text-white py-4 px-6 mr-8 cursor-pointer hover:text-black">Materiales</a>
           <a href="./ia" className="block text-white py-4 px-6 cursor-pointer hover:text-black">IA</a>
           <a href="./ong" className="block text-white py-4 px-6 cursor-pointer hover:text-black">ONGs</a>
