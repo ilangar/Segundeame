@@ -12,10 +12,7 @@ const HamburgerMenu = () => {
 
   return (
     <div className="absolute right-0 top-0 z-49">
-      <button
-        className="text-black focus:outline-none"
-        onClick={toggleMenu}
-      >
+      <button className="" onClick={toggleMenu}>
         <img className="h-6 w-6 mt-5 mr-5" src="./menu-hamburguesa.png" alt="Icono del menu hamburguesa" />
       </button>
       {isOpen && (
