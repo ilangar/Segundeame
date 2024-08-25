@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { GET } from "../api/materiales/ver/route";
 
 const BusquedaMateriales = ({ setMateriales }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,10 +24,21 @@ const BusquedaMateriales = ({ setMateriales }) => {
         body: JSON.stringify({ busqueda: searchTerm }),
       });
       const data = await response.json();
-      // Actualiza el estado de materiales en MaterialesPage
-      setMaterialesLocal(data); // Actualiza localmente en BusquedaMateriales
+
+      // Agregar console.log para ver la estructura de data
+      console.log('Datos recibidos de la API:', data);
+
+      // Si data no es un array, revisa la estructura y ajusta
+      if (Array.isArray(data)) {
+        setMaterialesLocal(data);
+      } else if (data && typeof data === 'object' && Array.isArray(data.materiales)) {
+        setMaterialesLocal(data.materiales);
+      } else {
+        setMaterialesLocal([]); // Si no es un array o no contiene el array esperado, lo dejamos vacío
+      }
     } catch (error) {
       console.error('Error al obtener los materiales:', error);
+      setMaterialesLocal([]); // En caso de error, asegúrate de que materiales sea un array vacío
     }
   };
 
@@ -56,7 +66,9 @@ const BusquedaMateriales = ({ setMateriales }) => {
       </form>
 
       <div className="mt-4">
-        {materiales.filter(material => material.material.toLowerCase().includes(searchTerm.toLowerCase())).map((material) => (
+        {Array.isArray(materiales) && materiales.filter(material => 
+          material.material?.toLowerCase().includes(searchTerm.toLowerCase())
+        ).map((material) => (
           <div key={material.iDMaterial} className="border p-4 mb-2">
             <h2>{material.material}</h2>
             <p>{material.caracteristicas}</p>
@@ -71,4 +83,3 @@ const BusquedaMateriales = ({ setMateriales }) => {
 }
 
 export default BusquedaMateriales;
-

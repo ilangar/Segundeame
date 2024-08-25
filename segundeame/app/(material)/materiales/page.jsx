@@ -20,7 +20,7 @@ const materiales = [
 
 export default function MaterialesPage() {
   return (
-    <section className="flex align-center justify-center">
+    <section className="flex align-center justify-center bg-[#FFF8F0]">
       <div className="block mt-4">
 
         <BusquedaMateriales />
