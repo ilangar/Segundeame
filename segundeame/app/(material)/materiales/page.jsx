@@ -1,20 +1,11 @@
 "use client";
 
-import { useState } from 'react';
-import BusquedaMateriales from '../../components/BusquedaMateriales';
-
-import dynamic from 'next/dynamic'; // Importa dynamic de next/dynamic para cargar BusquedaMateriales dinámicamente
-
-const DynamicBusquedaMateriales = dynamic(() => import('../../components/BusquedaMateriales'), {
-  ssr: false // Marca el componente para no ser renderizado en el servidor
-});
-
-
+import { BusquedaMateriales } from '@/app/components/busquedaMateriales';
 
 export default function MaterialesPage() {
   return (
     <section className="flex align-center justify-center bg-[#FFF8F0] h-full ">
-      <div className="block mt-4">
+      <div className="block mt-16">
 
         <BusquedaMateriales />
         
@@ -22,8 +13,6 @@ export default function MaterialesPage() {
           <a href="./subir-material" className="text-white">Subir nuevo material</a>
         </div>
         
-            
-          
       </div>
     </section>
   );

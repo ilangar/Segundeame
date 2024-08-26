@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 
-const BusquedaMateriales = ({ setMateriales }) => {
+export const BusquedaMateriales = ({ setMateriales }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [materiales, setMaterialesLocal] = useState([]);
 
@@ -50,7 +50,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
   }, []);
 
   return (
-    <div className="flex align-center items-center top-20">
+    <div className="flex flex-col align-center items-center ">
       <form onSubmit={handleSearchSubmit} className="flex align-center items-center">
         <input
           type="text"
@@ -66,7 +66,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
         </button>
       </form>
 
-      <div className="flex align-center items-center mt-4 w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px]">
+      <div className="flex flex-wrap align-center items-center mt-4 w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px]">
         {Array.isArray(materiales) && materiales.length > 0 ? (
           materiales.map((material) => (
             <div key={material.iDMaterial} className="border p-4 mb-2">
@@ -84,5 +84,3 @@ const BusquedaMateriales = ({ setMateriales }) => {
     </div>
   );
 }
-
-export default BusquedaMateriales;
