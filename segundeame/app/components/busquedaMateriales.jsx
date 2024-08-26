@@ -7,6 +7,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    console.log('Término de búsqueda actual:', event.target.value); // Verifica el término de búsqueda
   };
  
   const handleSearchSubmit = (event) => {
@@ -25,20 +26,21 @@ const BusquedaMateriales = ({ setMateriales }) => {
       });
       const data = await response.json();
 
-      // Agregar console.log para ver la estructura de data
-      console.log('Datos recibidos de la API:', data);
+      console.log('Datos recibidos de la API:', data); // Verifica los datos recibidos de la API
 
-      // Si data no es un array, revisa la estructura y ajusta
-      if (Array.isArray(data)) {
-        setMaterialesLocal(data);
-      } else if (data && typeof data === 'object' && Array.isArray(data.materiales)) {
-        setMaterialesLocal(data.materiales);
+      // Adaptar la lógica para manejar la estructura { message: Array }
+      if (data && Array.isArray(data.message)) {
+        setMaterialesLocal(data.message);
       } else {
-        setMaterialesLocal([]); // Si no es un array o no contiene el array esperado, lo dejamos vacío
+        setMaterialesLocal([]); // Si la estructura no es la esperada, lo dejamos vacío
       }
+
+      // Verifica el contenido de materiales después de actualizar el estado
+      console.log('Materiales almacenados en el estado:', materiales);
+
     } catch (error) {
       console.error('Error al obtener los materiales:', error);
-      setMaterialesLocal([]); // En caso de error, asegúrate de que materiales sea un array vacío
+      setMaterialesLocal([]); // En caso de error, asegura que `materiales` sea un array vacío
     }
   };
 
@@ -66,17 +68,21 @@ const BusquedaMateriales = ({ setMateriales }) => {
       </form>
 
       <div className="mt-4">
-        {Array.isArray(materiales) && materiales.filter(material => 
-          material.material?.toLowerCase().includes(searchTerm.toLowerCase())
-        ).map((material) => (
-          <div key={material.iDMaterial} className="border p-4 mb-2">
-            <h2>{material.material}</h2>
-            <p>{material.caracteristicas}</p>
-            <img src={material.fotoUrl} alt={material.material} />
-            <p>{material.email}</p>
-            <p>{material.telefono}</p>
-          </div>
-        ))}
+        {Array.isArray(materiales) && materiales.length > 0 ? (
+          materiales.filter(material => 
+            material.material?.toLowerCase().includes(searchTerm.toLowerCase())
+          ).map((material) => (
+            <div key={material.iDMaterial} className="border p-4 mb-2">
+              <h2>{material.material}</h2>
+              <p>{material.caracteristicas}</p>
+              <img src={material.fotoUrl} alt={material.material} />
+              <p>{material.email}</p>
+              <p>{material.telefono}</p>
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron materiales.</p> // Muestra este mensaje si no hay materiales para mostrar
+        )}
       </div>
     </div>
   );
