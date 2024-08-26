@@ -28,11 +28,13 @@ const BusquedaMateriales = ({ setMateriales }) => {
 
       console.log('Datos recibidos de la API:', data); // Verifica los datos recibidos de la API
 
-      // Adaptar la lógica para manejar la estructura { message: Array }
-      if (data && Array.isArray(data.message)) {
-        setMaterialesLocal(data.message);
+      // Si data no es un array, revisa la estructura y ajusta
+      if (Array.isArray(data)) {
+        setMaterialesLocal(data);
+      } else if (data && typeof data === 'object' && Array.isArray(data.materiales)) {
+        setMaterialesLocal(data.materiales);
       } else {
-        setMaterialesLocal([]); // Si la estructura no es la esperada, lo dejamos vacío
+        setMaterialesLocal([]); // Si no es un array o no contiene el array esperado, lo dejamos vacío
       }
 
       // Verifica el contenido de materiales después de actualizar el estado
@@ -67,17 +69,17 @@ const BusquedaMateriales = ({ setMateriales }) => {
         </button>
       </form>
 
-      <div className="mt-4">
+      <div className=" inline bg-lightgreen text-white rounded-full inline p-4 mb-2">
         {Array.isArray(materiales) && materiales.length > 0 ? (
           materiales.filter(material => 
             material.material?.toLowerCase().includes(searchTerm.toLowerCase())
           ).map((material) => (
-            <div key={material.iDMaterial} className="border p-4 mb-2">
-              <h2>{material.material}</h2>
-              <p>{material.caracteristicas}</p>
-              <img src={material.fotoUrl} alt={material.material} />
-              <p>{material.email}</p>
-              <p>{material.telefono}</p>
+            <div key={material.iDMaterial} className="bg-lightgreen text-white rounded-full inline p-4 mb-2">
+              <h2 className="text-lg text-white">{material.material}</h2>
+              <p className="text-lg text-white">{material.caracteristicas}</p>
+              <img src={material.fotoUrl} alt={material.material}  />
+              <p className="text-lg text-white">{material.email}</p>
+              <p className="text-lg text-white">{material.telefono}</p>
             </div>
           ))
         ) : (

@@ -22,7 +22,6 @@ export default function MaterialesPage() {
           <a href="./subir-material" className="text-white">Subir nuevo material</a>
         </div>
         
-        
             
           
       </div>
