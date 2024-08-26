@@ -62,7 +62,7 @@ export default function SubirMaterialesPage() {
                                 className="" 
                                 value={material} 
                                 onChange={(e) => setMaterial(e.target.value)}
-                                className="focus:outline-none"
+                                
                             />
                         </label>
                         <label className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
