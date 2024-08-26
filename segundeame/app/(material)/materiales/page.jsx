@@ -13,7 +13,7 @@ const DynamicBusquedaMateriales = dynamic(() => import('../../components/Busqued
 
 export default function MaterialesPage() {
   return (
-    <section className="flex align-center justify-center bg-[#FFF8F0]">
+    <section className="flex align-center justify-center bg-[#FFF8F0] h-full ">
       <div className="block mt-4">
 
         <BusquedaMateriales />
