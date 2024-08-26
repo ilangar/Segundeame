@@ -2,7 +2,6 @@ import { Alegreya } from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from './components/menu.jsx';
 
-const inter = Alegreya({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Segundeame",
