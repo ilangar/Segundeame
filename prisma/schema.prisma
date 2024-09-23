@@ -30,7 +30,7 @@ model Usuarios {
   iDUser      Int    @id @default(autoincrement())
   nombre   String
   apellido String
-  mail String
+  email String @unique
   telefono Int
   contrasena String
 }
