@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -9,27 +8,28 @@ export default function SubirMaterialesPage() {
     const [caracteristicas, setCaracteristicas] = useState('');
     const [email, setEmail] = useState('');
     const [telefono, setTelefono] = useState('');
-    const [fotoUrl, setFotoUrl] = useState(''); // Asumiendo una URL de imagen fija
+    const [foto, setFoto] = useState(null); // Para manejar la imagen seleccionada
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        const data = {
-            iDUser,
-            material,
-            caracteristicas,
-            fotoUrl,
-            email,
-            telefono
-        };
+        // Usamos FormData para enviar archivos y datos juntos
+        const formData = new FormData();
+        formData.append('iDUser', iDUser);
+        formData.append('material', material);
+        formData.append('caracteristicas', caracteristicas);
+        formData.append('email', email);
+        formData.append('telefono', telefono);
+
+        // Adjuntamos el archivo seleccionado
+        if (foto) {
+            formData.append('file', foto); // 'file' es el nombre que el backend espera
+        }
 
         try {
             const response = await fetch('http://localhost:3000/api/materiales/crear', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+                body: formData, // Enviamos los datos con FormData
             });
 
             const result = await response.json();
@@ -51,7 +51,7 @@ export default function SubirMaterialesPage() {
                                 accept="image/*" 
                                 multiple 
                                 className="cursor-pointer" 
-                                onChange={(e) => setFotoUrl('prueba')} // Aquí deberías manejar la subida de imágenes
+                                onChange={(e) => setFoto(e.target.files[0])} // Manejo de la imagen seleccionada
                             />
                         </label>
                         <label className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
@@ -59,10 +59,8 @@ export default function SubirMaterialesPage() {
                                 type="text" 
                                 required 
                                 placeholder="Materiales*" 
-                                className="" 
                                 value={material} 
                                 onChange={(e) => setMaterial(e.target.value)}
-                                
                             />
                         </label>
                         <label className="block border border-[#80B48B] rounded-md py-2 px-4 mr-2">
@@ -95,7 +93,6 @@ export default function SubirMaterialesPage() {
                                         value={telefono}
                                         onChange={(e) => setTelefono(e.target.value)}
                                         className="focus:outline-none"
-
                                     />
                                 </label>
                             </div>

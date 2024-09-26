@@ -41,3 +41,11 @@ model ChatBot{
   mensajeUsuario String
   mensajeBot String
 }
+
+model ONG {
+  iDOng      Int    @id @default(autoincrement())
+  nombre   String
+  ubicacion String
+  email String @unique
+  volutarios Bool
+  }
