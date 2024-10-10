@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { uploadFile } from '@/supabase'; 
 
 export default function SubirMaterialesPage() {
     const [iDUser, setIDUser] = useState(3);  // Asumiendo un valor fijo para el usuario
@@ -100,7 +101,8 @@ export default function SubirMaterialesPage() {
                         <input 
                             type="submit" 
                             value="Subir material" 
-                            className=" text-white bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4" 
+                            className=" text-white bg-[#80B48B] hover:bg-[#6C9675] cursor-pointer rounded-md py-2 px-4"
+                            onSubmit={uploadFile}
                         />
                     </fieldset>
                 </form>

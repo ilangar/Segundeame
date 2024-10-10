@@ -1,22 +1,27 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Create Supabase client
+const supabase = createClient('https://ubhawvhjtmupucogjads.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InViaGF3dmhqdG11cHVjb2dqYWRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU4Nzk4OTUsImV4cCI6MjAzMTQ1NTg5NX0.Wxf-zwHmP367Fm2mim0rQWO-wF2i_dKFfrtYNL-wEXM')
 
-export async function uploadImage(file) {
-    const fileName = `${Date.now()}_${file.originalname}`; // Nombre único para la imagen
-    const { data, error } = await supabase.storage
-        .from('images') // El nombre del bucket en Supabase
-        .upload(fileName, file.buffer, {
-            contentType: file.mimetype,
-        });
+// Upload file using standard upload
+export async function uploadFile(file) {
+  // Generar un nombre de archivo único (puedes usar un timestamp o cualquier otra lógica)
+  const x = `uploads/${file.name}`;
 
-    if (error) {
-        throw new Error('Error uploading image to Supabase');
-    }
+  const { data, error } = await supabase.storage
+    .from('fotos') // Asegurarse de usar el bucket correcto
+    .upload(filePath, file);
 
-    // Obtener la URL pública de la imagen subida
-    const url = `${supabase.storage.from('images').getPublicUrl(fileName).data.publicUrl}`;
-    return url;
+  if (error) {
+    console.error('Error uploading file:', error);
+    return null;
+  }
+
+  // Obtener la URL pública de la imagen subida
+  const { data: publicUrlData } = supabase.storage
+    .from('fotos') // Usar el mismo bucket aquí
+    .getPublicUrl(filePath);
+
+  const publicUrl = publicUrlData?.publicUrl;
+  return publicUrl;
 }

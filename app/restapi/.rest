@@ -5,7 +5,7 @@ Content-Type: application/json
 "iDUser" : 3,
 "material" : "carton",
 "caracteristicas" : "blando",
-"fotoUrl" : "prueba",
+"file" : "prueba",
 "email" : "ilugarchtrom@gmail.com",
 "telefono" : 1149497825
 }
