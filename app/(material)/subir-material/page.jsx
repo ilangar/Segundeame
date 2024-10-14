@@ -13,32 +13,31 @@ export default function SubirMaterialesPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        // Usamos FormData para enviar archivos y datos juntos
         const formData = new FormData();
         formData.append('iDUser', iDUser);
         formData.append('material', material);
         formData.append('caracteristicas', caracteristicas);
         formData.append('email', email);
         formData.append('telefono', telefono);
-
-        // Adjuntamos el archivo seleccionado
+    
+        // Adjuntar archivo si existe
         if (foto) {
-            formData.append('file', foto); // 'file' es el nombre que el backend espera
+            formData.append('file', foto); // 'file' es el nombre esperado por el backend
         }
-
+    
         try {
-            const response = await fetch('http://localhost:3000/api/materiales/crear', {
+            const response = await fetch('/api/materiales/crear', {
                 method: 'POST',
-                body: formData, // Enviamos los datos con FormData
+                body: formData,
             });
-
+    
             const result = await response.json();
             console.log('Success:', result);
         } catch (error) {
             console.error('Error:', error);
         }
     };
-
+    
     return (
         <main className="">
             <div className="mt-10 flex align-center justify-center w-full flex-col overflow-hidden">
