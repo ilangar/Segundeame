@@ -1,0 +1,4 @@
+{
+  "/(material)/materiales/page": "app/(material)/materiales/page.js",
+  "/(material)/subir-material/page": "app/(material)/subir-material/page.js"
+}
