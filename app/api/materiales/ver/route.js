@@ -9,7 +9,6 @@ export async function GET(req) {
         return NextResponse.json({ error: error.message }, { status: 400 });
     }
 }
- q  
 export async function POST(req) {
     try {
         const body = await req.json(); 

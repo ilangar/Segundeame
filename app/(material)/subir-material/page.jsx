@@ -7,7 +7,7 @@ export default function SubirMaterialesPage() {
     const [material, setMaterial] = useState('');
     const [caracteristicas, setCaracteristicas] = useState('');
     const [email, setEmail] = useState('');
-    const [telefono, setTelefono] = useState('');
+    const [telefono, setTelefono] = useState(null);
     const [foto, setFoto] = useState(null); // Para manejar la imagen seleccionada
 
     const handleSubmit = async (e) => {
@@ -20,11 +20,12 @@ export default function SubirMaterialesPage() {
         formData.append('email', email);
         formData.append('telefono', telefono);
     
+        console.log(telefono)
         // Adjuntar archivo si existe
         if (foto) {
             formData.append('file', foto); // 'file' es el nombre esperado por el backend
         }
-    
+        console.log(foto);
         try {
             const response = await fetch('/api/materiales/crear', {
                 method: 'POST',
