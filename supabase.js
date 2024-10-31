@@ -9,7 +9,7 @@ const supabase = createClient(
 // Función para subir archivos
 export async function uploadFile(file) {
   try {
-    const filePath = `uploads/${file.originalname}`;  // Usamos el nombre original del archivo
+    const filePath = `uploads/${file.name}`;  // Usamos el nombre original del archivo
 
     const { data, error } = await supabase.storage
       .from('fotos') // Asegúrate de usar el bucket correcto

@@ -22,7 +22,7 @@ model Material {
   material String
   caracteristicas String
   email String
-  telefono Int
+  telefono String
   fotoUrl String
 }
 
@@ -31,7 +31,7 @@ model Usuarios {
   nombre   String
   apellido String
   email String @unique
-  telefono Int
+  telefono String
   contrasena String
 }
 
@@ -47,5 +47,5 @@ model ONG {
   nombre   String
   ubicacion String
   email String @unique
-  volutarios Bool
+  volutarios Boolean
   }
