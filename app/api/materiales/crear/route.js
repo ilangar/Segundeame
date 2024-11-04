@@ -28,10 +28,9 @@ export async function POST(req) {
       }
 
       try {
-       console.log('File:', req.file);  // Verifica si Multer está manejando el archivo correctamente
-        if (!req.file) {
-          return resolve(NextResponse.json({ error: 'No file uploaded' }, { status: 400 }));
-        }
+        // if (!req.file) {
+          // return resolve(NextResponse.json({ error: 'No file uploaded' }, { status: 400 }));
+        // }
 
 
         const formData = await req.formData();
