@@ -44,8 +44,9 @@ model ChatBot{
 
 model ONG {
   iDOng      Int    @id @default(autoincrement())
-  nombre   String
-  ubicacion String
+  iDUser Int
+  material   String
+  caracteristicas String
+  telefono String
   email String @unique
-  volutarios Boolean
   }
