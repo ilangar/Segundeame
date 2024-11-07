@@ -2,7 +2,7 @@
   "name": "segundeame",
   "version": "0.1.0",
   "private": true,
-  "main": "index.js",
+  "main": "app/page.jsx",
   "type": "module",
   "scripts": {
     "dev": "next dev",
