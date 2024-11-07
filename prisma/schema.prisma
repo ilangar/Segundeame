@@ -49,4 +49,5 @@ model ONG {
   caracteristicas String
   telefono String
   email String @unique
+  fotoUrl String
   }
