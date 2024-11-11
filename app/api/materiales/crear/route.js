@@ -13,7 +13,11 @@ const supabase = createClient(
   'https://ubhawvhjtmupucogjads.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InViaGF3dmhqdG11cHVjb2dqYWRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU4Nzk4OTUsImV4cCI6MjAzMTQ1NTg5NX0.Wxf-zwHmP367Fm2mim0rQWO-wF2i_dKFfrtYNL-wEXM'
 );
-export const requestBodyParsing = false;
+export const config = {
+  api: {
+    bodyParser: false,  // Necesario para que Multer maneje la solicitud
+  },
+};
 
 export async function POST(req) {
   return new Promise((resolve, reject) => {
