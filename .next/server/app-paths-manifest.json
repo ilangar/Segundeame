@@ -1,4 +1,27 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(cuenta)/elegir/page": "app/(cuenta)/elegir/page.js",
+  "/(material)/materiales/page": "app/(material)/materiales/page.js",
+  "/(cuenta)/iniciar/page": "app/(cuenta)/iniciar/page.js",
+  "/(fotos)/foto/page": "app/(fotos)/foto/page.js",
+  "/(material)/subir-material/page": "app/(material)/subir-material/page.js",
+  "/(ia)/ia/page": "app/(ia)/ia/page.js",
+  "/(cuenta)/crear/page": "app/(cuenta)/crear/page.js",
+  "/(material)/ver_material/page": "app/(material)/ver_material/page.js",
+  "/api/ia/verMensajeBot/route": "app/api/ia/verMensajeBot/route.js",
+  "/api/ia/enviarMensajeBot/route": "app/api/ia/enviarMensajeBot/route.js",
+  "/api/ia/verMensajeUsuario/route": "app/api/ia/verMensajeUsuario/route.js",
+  "/api/ia/enviarMensajeUsuarioIa/route": "app/api/ia/enviarMensajeUsuarioIa/route.js",
+  "/api/ia/enviarMensajeUsuario/route": "app/api/ia/enviarMensajeUsuario/route.js",
+  "/(ong)/subir-ong/page": "app/(ong)/subir-ong/page.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/api/materiales/ver/route": "app/api/materiales/ver/route.js",
+  "/(ong)/ong/page": "app/(ong)/ong/page.js",
+  "/perfil/page": "app/perfil/page.js",
   "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/api/ong/ver/route": "app/api/ong/ver/route.js",
+  "/(ayuda)/ayuda/page": "app/(ayuda)/ayuda/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/materiales/crear/route": "app/api/materiales/crear/route.js",
+  "/api/ong/crear/route": "app/api/ong/crear/route.js"
 }
