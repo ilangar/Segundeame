@@ -1,9 +1,11 @@
 "use client"
 
+require('dotenv').config();
 const API_KEY = process.env.REACT_APP_API_KEY;
 console.log(API_KEY)
 import ChatIA from "@/app/components/chatIA";
 import { GoogleGenerativeAI } from "@google/generative-ai"
+import ReactDOM from 'react-dom';
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 import { useState } from 'react';
