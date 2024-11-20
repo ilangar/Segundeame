@@ -31,7 +31,7 @@ const ChatIA = ({ onSearch = null }) => {
         {send ? (
           <p className="flex text-center rounded-lg px-2 py-2 w-[520px] bg-[#80B48B]">Creando una idea... </p>
         ) : (
-          <h1 className="flex text-center rounded-lg py-2 w-[520px] bg-[#80B48B]">Cuentale a nuestra IA que proyecto quieres realizar para que te responda ocn los materiales necesarios y los pasos para realizarlo</h1>
+          <h1 className="flex text-center rounded-lg py-2 w-[520px] bg-[#80B48B]">Cuentale a nuestra IA que proyecto quieres realizar para que te responda con} los materiales necesarios y los pasos para realizarlo</h1>
         )}
       </div>
 
