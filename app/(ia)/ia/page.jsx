@@ -1,5 +1,5 @@
 "use client"
-const API_KEY = 'AIzaSyDJbeyKtSiOIfRxOtLl-9qbhS-NNrZ5Z08';
+const API_KEY = 'AIzaSyBnwl1_cDGpAhpofERyTgHHxjusYTRvcSk';
 import ChatIA from "@/app/components/chatIA";
 import { GoogleGenerativeAI } from "@google/generative-ai"
 const genAI = new GoogleGenerativeAI(API_KEY);
