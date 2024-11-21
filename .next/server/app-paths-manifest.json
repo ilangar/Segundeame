@@ -1,1 +1,5 @@
-{}
+{
+  "/(cuenta)/elegir/page": "app/(cuenta)/elegir/page.js",
+  "/(cuenta)/crear/page": "app/(cuenta)/crear/page.js",
+  "/(cuenta)/iniciar/page": "app/(cuenta)/iniciar/page.js"
+}

@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/(cuenta)/iniciar/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(cuenta)/iniciar/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,10 +11,20 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/_not-found/page": [
+    "/(cuenta)/elegir/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/(cuenta)/elegir/page.js"
+    ],
+    "/(cuenta)/crear/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(cuenta)/crear/page.js"
+    ],
+    "/(cuenta)/iniciar/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(cuenta)/iniciar/page.js"
     ]
   }
 }
