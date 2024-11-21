@@ -10,8 +10,5 @@ export default function Elegir() {
           <a href="./iniciar" className="text-white">Iniciar cuanta</a>
         </div>
     </section>
-  );
+ );
 }
-
-
-
