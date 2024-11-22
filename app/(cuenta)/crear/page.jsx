@@ -8,8 +8,7 @@ export default function CrearCuenta() {
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [password, setPassword] = useState("");
-  const [mensaje, setMensaje] = useState(""); // Para mostrar mensajes al usuario
-
+  
   const manejarEnvio = async (e) => {
     e.preventDefault(); // Evitar que la página recargue
 
