@@ -15,16 +15,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(cuenta)/elegir/page.js"
-    ],
-    "/(cuenta)/crear/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(cuenta)/crear/page.js"
-    ],
-    "/(cuenta)/iniciar/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(cuenta)/iniciar/page.js"
     ]
   }
 }
