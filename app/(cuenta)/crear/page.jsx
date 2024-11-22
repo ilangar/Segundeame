@@ -44,7 +44,7 @@ export default function CrearCuenta() {
   return (
     <section className="flex align-center justify-center bg-[#FFF8F0] h-full">
       <div className="flex gap-8">
-        <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
+        <form onSubmit={manejarEnvio} className="flex flex-col gap-4 mt-30">
           <input
             type="text"
             required
