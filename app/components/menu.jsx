@@ -20,7 +20,7 @@ const HamburgerMenu = () => {
           <a href="./materiales" className="block text-white py-4 px-6 mr-8 cursor-pointer hover:text-black">Materiales</a>
           <a href="./ia" className="block text-white py-4 px-6 cursor-pointer hover:text-black">IA</a>
           <a href="./ong" className="block text-white py-4 px-6 cursor-pointer hover:text-black">ONGs</a>
-          <a href="./elegir" className="block text-white py-4 px-6 cursor-pointer hover:text-black">Perfil</a>
+          <a href="./inse" className="block text-white py-4 px-6 cursor-pointer hover:text-black">Perfil</a>
           <a href="./ayuda" className="block text-white py-4 px-6 cursor-pointer hover:text-black">Ayuda</a>
         </div>
       )}

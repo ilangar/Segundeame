@@ -44,58 +44,56 @@ export default function ONGs() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center w-full mt-10">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full max-w-4xl">
-        {/* Sección de imagen */}
-        <div className="flex flex-col items-center border-2 border-dashed border-[#80B48B] rounded-lg p-6 w-72 h-64">
-          <div className="flex flex-col items-center">
-            <div className="text-[#80B48B] text-3xl mb-2">+</div>
-            <p className="text-[#4A4A4A] text-lg font-medium">Agregar foto</p>
-          </div>
-          <p className="text-sm text-[#4A4A4A] mt-2">Mínimo una imagen</p>
-          <input type="file" accept="image/*" multiple={false} className="opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer" onChange={handleFileChange} />
-        </div>
-
-        {/* Formulario */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-sm">
-          <input 
-            type="text" 
-            required 
-            placeholder="Título *" 
-            value={title} 
-            onChange={(e) => setTitle(e.target.value)} 
-            className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none"
-          />
-          <input 
-            type="text" 
-            required 
-            placeholder="Descripción *" 
-            value={description} 
-            onChange={(e) => setDescription(e.target.value)} 
-            className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none"
-          />
-          <input 
-            type="email" 
-            required 
-            placeholder="Email *" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none"
-          />
-          <input 
-            type="tel" 
-            placeholder="Número de teléfono" 
-            value={phone} 
-            onChange={(e) => setPhone(e.target.value)} 
-            className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none"
-          />
-          <input 
-            type="submit" 
-            value="Subir ONG" 
-            className="bg-[#80B48B] text-white font-semibold rounded-md p-3 cursor-pointer hover:bg-[#6C9675]"
-          />
-        </form>
+    <main className="flex flex-col items-center justify-center w-full mt-16">
+  <div className="flex flex-col md:flex-row items-start justify-center gap-12 w-full max-w-5xl">
+    {/* Contenedor para subir la foto */}
+    <div className="flex flex-col items-center border-2 border-dashed border-[#80B48B] rounded-lg p-6 w-72 h-64 relative">
+      <div className="flex flex-col items-center">
+        <div className="text-[#80B48B] text-3xl mb-2">+</div>
+        <p className="text-[#4A4A4A] text-lg font-medium">Agregar foto</p>
       </div>
-    </main>
+      <p className="text-sm text-[#4A4A4A] mt-2">Sólo una foto</p>
+      <input
+        type="file"
+        accept="image/*"
+        multiple={false}
+        className="opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer"
+      />
+    </div>
+
+    {/* Formulario */}
+    <form className="flex flex-col gap-6 w-full max-w-sm">
+      <input
+        type="text"
+        required
+        placeholder="Título *"
+        className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-sm"
+      />
+      <input
+        type="text"
+        required
+        placeholder="Descripción *"
+        className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-sm"
+      />
+      <input
+        type="email"
+        required
+        placeholder="Email *"
+        className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-sm"
+      />
+      <input
+        type="tel"
+        placeholder="Número de teléfono"
+        className="border border-[#80B48B] rounded-md p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-sm"
+      />
+      <input
+        type="submit"
+        value="Subir ONG"
+        className="bg-[#80B48B] text-white font-semibold rounded-md p-3 cursor-pointer hover:bg-[#6C9675] transition-shadow duration-200 shadow-md"
+      />
+    </form>
+  </div>
+</main>
+
   );
 }

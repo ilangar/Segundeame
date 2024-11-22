@@ -1,5 +1,7 @@
 {
-  "/(cuenta)/elegir/page": "app/(cuenta)/elegir/page.js",
-  "/(cuenta)/crear/page": "app/(cuenta)/crear/page.js",
-  "/(cuenta)/iniciar/page": "app/(cuenta)/iniciar/page.js"
+  "/(ayuda)/ayuda/page": "app/(ayuda)/ayuda/page.js",
+  "/page": "app/page.js",
+  "/(ong)/ong/page": "app/(ong)/ong/page.js",
+  "/(ong)/subir-ong/page": "app/(ong)/subir-ong/page.js",
+  "/(material)/subir-material/page": "app/(material)/subir-material/page.js"
 }

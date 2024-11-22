@@ -10,56 +10,56 @@ export default function CrearCuenta() {
   const [password, setPassword] = useState("");
 
   return (
-    <section className="flex align-center justify-center bg-[#FFF8F0] h-full">
-      <div className="flex gap-8">
-        <form action="" className="flex flex-col gap-4">
+    <section className="flex items-center justify-center min-h-screen p-4">
+      <div className="w-full max-w-md bg-white p-6 rounded-lg ">
+        <form className="flex flex-col gap-4">
           <input
             type="text"
             required
-            placeholder="Nombre *"
+            placeholder="Nombre*"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-md"
           />
           <input
             type="text"
             required
-            placeholder="Apellido *"
+            placeholder="Apellido*"
             value={apellido}
             onChange={(e) => setApellido(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B]shadow-md"
           />
           <input
             type="email"
             required
-            placeholder="Email *"
+            placeholder="Email*"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B]shadow-md"
           />
           <input
             type="tel"
             required
-            placeholder="Teléfono *"
+            placeholder="Teléfono*"
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B]shadow-md"
           />
           <input
             type="password"
             required
-            placeholder="Contraseña *"
+            placeholder="Contraseña*"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-md"
           />
-          <input 
-            type="submit" 
-            value="Crear cuenta" 
-            className="p-3 bg-[#80B48B] text-white rounded-lg cursor-pointer hover:bg-[#6C9675]"
-            />
+          <button
+            type="submit"
+            className="w-full bg-[#80B48B] text-white text-sm  py-2 rounded hover:bg-[#6A9B74] transition duration-300 shadow-md"> 
+            Crear cuenta</button>
         </form>
+        <a href="./inse" className="flex items-center justify-center mt-3 text-sm underline text-center">¿Tienes una cuenta?¡Inicia sesión!</a>
       </div>
     </section>
   );
-}
+} 

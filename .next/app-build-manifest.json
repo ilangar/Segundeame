@@ -1,30 +1,55 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(cuenta)/elegir/page": [
+    "/(material)/materiales/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(cuenta)/elegir/page.js"
+      "static/chunks/app/(material)/materiales/page.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/(ia)/ia/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(ia)/ia/page.js"
     ],
     "/(cuenta)/crear/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(cuenta)/crear/page.js"
     ],
-    "/(cuenta)/iniciar/page": [
+    "/(cuenta)/inse/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(cuenta)/iniciar/page.js"
+      "static/chunks/app/(cuenta)/inse/page.js"
+    ],
+    "/(ayuda)/ayuda/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(ayuda)/ayuda/page.js"
+    ],
+    "/(ong)/ong/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(ong)/ong/page.js"
+    ],
+    "/(ong)/subir-ong/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(ong)/subir-ong/page.js"
+    ],
+    "/(material)/subir-material/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(material)/subir-material/page.js"
     ]
   }
 }

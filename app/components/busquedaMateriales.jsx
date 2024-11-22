@@ -66,7 +66,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
         </button>
       </form>
 
-      <div className="top-24 flex align-center items-center mt-4 w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px]">
+      <div className="top-24 flex align-center items-center mt-4 w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px] overflow-y-auto]">
         {Array.isArray(materiales) && materiales.length > 0 ? (
           materiales.map((material) => (
             <div key={material.iDMaterial} className="border p-4 mb-2">
