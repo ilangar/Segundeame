@@ -11,7 +11,7 @@ export default function IniciarCuenta() {
     e.preventDefault(); // Evita que la página recargue
 
     try {
-      const response = await fetch("/api/iniciar", {
+      const response = await fetch("/api/iniciarSesion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

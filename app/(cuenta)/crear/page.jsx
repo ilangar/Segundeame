@@ -13,7 +13,7 @@ export default function CrearCuenta() {
     e.preventDefault(); // Evitar que la página recargue
 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/crearCuenta", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
