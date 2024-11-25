@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/db";
-import bcrypt from "bcrypt";
 
 export async function POST(req) {
   try {
@@ -16,9 +15,8 @@ export async function POST(req) {
       return NextResponse.json({ error: "Usuario no encontrado" }, { status: 404 });
     }
 
-    // Verifica la contraseña encriptada
-    const esValida = await bcrypt.compare(contrasena, usuario.contrasena);
-    if (esValida) {
+    // Compara la contraseña directamente (sin encriptar)
+    if (usuario.contrasena === contrasena) {
       return NextResponse.json({ message: "Inicio de sesión exitoso", usuario }, { status: 200 });
     } else {
       return NextResponse.json({ error: "Contraseña incorrecta" }, { status: 401 });
