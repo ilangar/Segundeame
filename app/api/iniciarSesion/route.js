@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/db';
+import { NextResponse } from "next/server";
+import { prisma } from "@/db";
+import bcrypt from "bcrypt";
 
 export async function POST(req) {
   try {
@@ -12,17 +13,18 @@ export async function POST(req) {
     });
 
     if (!usuario) {
-      return NextResponse.json({ error: 'Usuario no encontrado' }, { status: 404 });
+      return NextResponse.json({ error: "Usuario no encontrado" }, { status: 404 });
     }
 
-    // Verifica la contraseña
-    if (usuario.contrasena === contrasena) {
-      return NextResponse.json({ message: 'Inicio de sesión exitoso', usuario }, { status: 200 });
+    // Verifica la contraseña encriptada
+    const esValida = await bcrypt.compare(contrasena, usuario.contrasena);
+    if (esValida) {
+      return NextResponse.json({ message: "Inicio de sesión exitoso", usuario }, { status: 200 });
     } else {
-      return NextResponse.json({ error: 'Contraseña incorrecta' }, { status: 401 });
+      return NextResponse.json({ error: "Contraseña incorrecta" }, { status: 401 });
     }
   } catch (error) {
-    console.error('Error en el inicio de sesión:', error.message);
-    return NextResponse.json({ error: 'Error en el inicio de sesión', details: error.message }, { status: 500 });
+    console.error("Error en el inicio de sesión:", error.message);
+    return NextResponse.json({ error: "Error en el inicio de sesión", details: error.message }, { status: 500 });
   }
 }

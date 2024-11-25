@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function IniciarCuenta() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [mensaje, setMensaje] = useState(""); // Para mostrar mensajes al usuario
+  const [mensaje, setMensaje] = useState("");
+  const router = useRouter();
 
   const manejarEnvio = async (e) => {
-    e.preventDefault(); // Evita que la página recargue
+    e.preventDefault();
 
     try {
       const response = await fetch("/api/iniciarSesion", {
@@ -16,17 +18,14 @@ export default function IniciarCuenta() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          email,
-          contrasena: password, // Asegúrate de que coincida con el back-end
-        }),
+        body: JSON.stringify({ email, contrasena: password }),
       });
 
       const data = await response.json();
       if (response.ok) {
         setMensaje("Inicio de sesión exitoso");
-        console.log("Usuario:", data.usuario); // Procesar usuario si es necesario
-        // Aquí puedes redirigir al usuario o guardar un token si es necesario
+        console.log("Usuario:", data.usuario);
+        router.push("/dashboard"); // Redirige al dashboard o página principal
       } else {
         setMensaje(data.error || "Ocurrió un error.");
       }

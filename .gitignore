@@ -2,5 +2,5 @@
 
 # local env files
 .env
-
+.next
 node_modules
