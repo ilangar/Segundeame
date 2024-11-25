@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           </div>
           <HamburgerMenu />
         </header>
-        <section className="mt-16">{children}</section>
+        <section>{children}</section>
       </body>
     </html>
   );

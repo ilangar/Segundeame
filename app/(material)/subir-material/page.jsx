@@ -45,7 +45,7 @@ export default function SubirMaterialesPage() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     {/* Sección de carga de imagen */}
                     <label className="flex flex-col items-center justify-center w-64 h-64 border-2 border-dashed border-[#80B48B] rounded-lg text-[#80B48B] text-center cursor-pointer">
-                        <img src="/icons/plus-icon.png" alt="Agregar foto" className="w-12 mb-4" />
+                        <img src="madera.png" alt="Agregar foto" className="w-12 mb-4" />
                         <span className="font-semibold mb-1">Agregar foto</span>
                         <span className="text-gray-500">Sólo una foto</span>
                         <input 
