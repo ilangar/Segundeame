@@ -8,14 +8,14 @@ export default function CrearCuenta() {
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [password, setPassword] = useState("");
-  const [mensaje, setMensaje] = useState("");
+  const [mensaje, setMensaje] = useState(""); // Para mostrar mensajes de error o éxito
 
   const manejarEnvio = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Evita que la página recargue
 
     // Validación de campos obligatorios
     if (!nombre || !apellido || !email || !password) {
-      setMensaje("Por favor, llena todos los campos obligatorios.");
+      setMensaje("Por favor, completa todos los campos obligatorios.");
       return;
     }
 
@@ -37,10 +37,10 @@ export default function CrearCuenta() {
       const data = await response.json();
 
       if (response.ok) {
-        setMensaje("¡Cuenta creada con éxito!");
+        setMensaje(data.message); // Muestra el mensaje de éxito
         console.log("Usuario creado:", data.usuario);
       } else {
-        setMensaje(data.error || "Ocurrió un error.");
+        setMensaje(data.error || "Ocurrió un error."); // Muestra el error si ocurre
       }
     } catch (error) {
       console.error("Error en la solicitud:", error);

@@ -7,7 +7,7 @@ export async function POST(req) {
     const { email, contrasena, nombre, apellido, telefono } = body;
 
     // Verifica si el usuario ya existe en la base de datos
-    let usuarioExistente = await prisma.usuarios.findUnique({
+    const usuarioExistente = await prisma.usuarios.findUnique({
       where: { email },
     });
 
@@ -18,11 +18,11 @@ export async function POST(req) {
       );
     }
 
-    // Crear el nuevo usuario sin cifrar la contraseña
+    // Crear el nuevo usuario
     const usuario = await prisma.usuarios.create({
       data: {
         email,
-        contrasena, // Contraseña almacenada sin cifrar (no recomendado)
+        contrasena, // Nota: la contraseña no está cifrada (no recomendado)
         nombre,
         apellido,
         telefono,
