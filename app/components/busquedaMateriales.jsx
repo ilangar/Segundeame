@@ -68,7 +68,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
       </form>
 
       <div className="flex items-center mt-6 w-full max-w-4xl overflow-hidden">
-        <button className="text-[#80B48B] text-3xl mx-2">{"<"}</button>
+        
         <div className="flex items-center gap-4 w-full overflow-x-auto">
           {Array.isArray(materiales) && materiales.length > 0 ? (
             materiales.map((material) => (
@@ -92,7 +92,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
             <p className="text-center text-gray-500">No se encontraron materiales.</p>
           )}
         </div>
-        <button className="text-[#80B48B] text-3xl mx-2">{">"}</button>
+        
       </div>
     </div>
   );
