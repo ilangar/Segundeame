@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/db';  // Ya tienes Prisma configurado
-import { createClient } from '@supabase/supabase-js';
+import { uploadFile } from '@/supabase';  // Importar la función para subir a Supabase
 import multer from 'multer';
+import { createClient } from '@supabase/supabase-js';
 
 // Configuración de Multer para manejar archivos en memoria
 const upload = multer({
@@ -12,7 +13,6 @@ const supabase = createClient(
   'https://ubhawvhjtmupucogjads.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InViaGF3dmhqdG11cHVjb2dqYWRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU4Nzk4OTUsImV4cCI6MjAzMTQ1NTg5NX0.Wxf-zwHmP367Fm2mim0rQWO-wF2i_dKFfrtYNL-wEXM'
 );
-
 export const requestBodyParsing = false;
 
 export async function POST(req) {
@@ -24,17 +24,21 @@ export async function POST(req) {
       }
 
       try {
-        if (!req.file) {
-          return resolve(NextResponse.json({ error: 'No file uploaded' }, { status: 400 }));
-        }
+        // if (!req.file) {
+          // return resolve(NextResponse.json({ error: 'No file uploaded' }, { status: 400 }));
+        // }
 
-        // Datos del formulario
-        const { iDUser, material, caracteristicas, email, telefono } = req.body || {};
-        const fileBuffer = req.file.buffer;
-        const fileName = req.file.originalname;
 
+        const formData = await req.formData();
+        const iDUser = formData.get('iDUser');
+        const material = formData.get('material');
+        const caracteristicas = formData.get('caracteristicas');
+        const email = formData.get('email');
+        const telefono = formData.get('telefono');
+        const file = formData.get('file');
         // Subir la imagen a Supabase y obtener la URL pública
-        const imageUrl = await uploadFile(fileBuffer, fileName);
+        console.log(file);
+        const imageUrl = await uploadFile(file);  // Pasar el archivo procesado por Multer
 
         if (!imageUrl) {
           return resolve(NextResponse.json({ error: 'Error uploading image' }, { status: 400 }));
@@ -43,12 +47,12 @@ export async function POST(req) {
         // Crear un nuevo material en la base de datos
         const newMaterial = await prisma.material.create({
           data: {
-            iDUser: parseInt(iDUser),
+            iDUser: parseInt(iDUser),  // Asegúrate de que sea un entero si es necesario
             material,
             caracteristicas,
             email,
             telefono,
-            fotoUrl: imageUrl,  // URL pública de la imagen
+            fotoUrl: imageUrl,  // Almacena la URL de la imagen subida
           },
         });
 
@@ -60,24 +64,4 @@ export async function POST(req) {
       }
     });
   });
-}
-
-// Función para subir archivos a Supabase
-async function uploadFile(fileBuffer, fileName) {
-  const { data, error } = await supabase.storage
-    .from('fotos') // Cambia esto por el nombre de tu bucket en Supabase
-    .upload(`uploads/${fileName}`, fileBuffer, {
-      cacheControl: '3600',
-      upsert: true,
-      contentType: 'image/jpeg', // Asegúrate de que coincida con el tipo de archivo
-    });
-
-  if (error) {
-    console.error('Error uploading file to Supabase:', error);
-    return null;
-  }
-
-  // Obtén la URL pública
-  const { publicUrl } = supabase.storage.from('your-bucket-name').getPublicUrl(`uploads/${fileName}`);
-  return publicUrl;
 }
