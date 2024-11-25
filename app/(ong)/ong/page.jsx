@@ -13,7 +13,7 @@ export default function ONGs() {
               {/* Tarjetas de proyectos */}
               <div className="grid grid-cols-3 gap-4">
                   <div className="relative bg-white border rounded-lg shadow-lg overflow-hidden w-48 h-56">
-                      <img src="https://via.placeholder.com/150" alt="Proyecto 1" className="w-full h-3/4 object-cover" />
+                      <img src="/Proyecto1.jpg" alt="Proyecto 1" className="w-full h-3/4 object-cover" />
                       <div className="absolute top-2 right-2">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                               <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.414l-6.828-6.828a4 4 0 010-5.656z" />
@@ -21,7 +21,7 @@ export default function ONGs() {
                       </div>
                   </div>
                   <div className="relative bg-white border rounded-lg shadow-lg overflow-hidden w-48 h-56">
-                      <img src="https://via.placeholder.com/150" alt="Proyecto 2" className="w-full h-3/4 object-cover" />
+                      <img src="/Proyecto2.jpg" alt="Proyecto 2" className="w-full h-3/4 object-cover" />
                       <div className="absolute top-2 right-2">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                               <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.414l-6.828-6.828a4 4 0 010-5.656z" />
@@ -29,7 +29,7 @@ export default function ONGs() {
                       </div>
                   </div>
                   <div className="relative bg-white border rounded-lg shadow-lg overflow-hidden w-48 h-56">
-                      <img src="https://via.placeholder.com/150" alt="Proyecto 3" className="w-full h-3/4 object-cover" />
+                      <img src="Proyecto3.jpg" alt="Proyecto 3" className="w-full h-3/4 object-cover" />
                       <div className="absolute top-2 right-2">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                               <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.414l-6.828-6.828a4 4 0 010-5.656z" />

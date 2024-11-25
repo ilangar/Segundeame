@@ -78,7 +78,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
             </div>
           ))
         ) : (
-          <p>No se encontraron materiales.</p>
+          <p className="bottom">No se encontraron materiales.</p>
         )}
       </div>
     </div>
