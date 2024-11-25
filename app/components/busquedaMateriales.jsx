@@ -50,36 +50,49 @@ const BusquedaMateriales = ({ setMateriales }) => {
   }, []);
 
   return (
-    <div className="flex align-center items-center top-20">
-      <form onSubmit={handleSearchSubmit} className="flex align-center items-center">
+
+    <div className="flex flex-col items-center justify-center w-full">
+      <form onSubmit={handleSearchSubmit} className="flex items-center gap-2 w-[90%] max-w-3xl">
         <input
           type="text"
           placeholder="Buscar materiales..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="border border-[#80B48B] rounded-md py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-[#6C9675] drop-shadow-md"
+          className="border border-[#80B48B] rounded-l-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-[#6C9675] shadow-sm"
         />
         <button
           type="submit"
-          className="bg-[#80B48B] text-white rounded-md py-2 px-4 hover:bg-[#6C9675] focus:outline-none focus:bg-[#6C9675] drop-shadow-md">
+          className="bg-[#80B48B] text-white rounded-r-md py-2 px-4 hover:bg-[#6C9675] focus:outline-none focus:ring-2 focus:ring-[#6C9675] shadow-sm">
           Buscar
         </button>
       </form>
 
-      <div className="top-24 flex align-center items-center mt-4 w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px] overflow-y-auto]">
-        {Array.isArray(materiales) && materiales.length > 0 ? (
-          materiales.map((material) => (
-            <div key={material.iDMaterial} className="border p-4 mb-2">
-              <h2 className="">{material.material}</h2>
-              <p className="">{material.caracteristicas}</p>
-              
-              <p className="">{material.email}</p>
-              <p className="">{material.telefono}</p>
-            </div>
-          ))
-        ) : (
-          <p className="bottom">No se encontraron materiales.</p>
-        )}
+      <div className="flex items-center mt-6 w-full max-w-4xl overflow-hidden">
+        <button className="text-[#80B48B] text-3xl mx-2">{"<"}</button>
+        <div className="flex items-center gap-4 w-full overflow-x-auto">
+          {Array.isArray(materiales) && materiales.length > 0 ? (
+            materiales.map((material) => (
+              <div
+                key={material.iDMaterial}
+                className="flex flex-col items-center border rounded-lg p-4 w-[200px] h-[250px] shadow-sm bg-white"
+              >
+                <div className="w-full h-[150px] bg-gray-100 rounded-md mb-2">
+                  <img
+                    src={material.imagen || "/placeholder.png"}
+                    alt={material.material}
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </div>
+                <h2 className="text-center font-semibold text-[#4A4A4A]">
+                  {material.material}
+                </h2>
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-gray-500">No se encontraron materiales.</p>
+          )}
+        </div>
+        <button className="text-[#80B48B] text-3xl mx-2">{">"}</button>
       </div>
     </div>
   );

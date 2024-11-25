@@ -4,6 +4,7 @@ import BusquedaMateriales from "@/app/components/busquedaMateriales";
 
 export default function MaterialesPage() {
   return (
+
     <section className="flex align-center justify-center h-full ">
       <div className="block mt-16">
 

@@ -37,7 +37,7 @@ export default function IniciarCuenta() {
   };
 
   return (
-    <section className="flex align-center justify-center bg-[#FFF8F0] h-full">
+    <section className="flex align-center justify-center h-full">
       <div className="flex gap-8 mt-40">
         <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
           <input

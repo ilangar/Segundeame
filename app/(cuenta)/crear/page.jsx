@@ -71,8 +71,8 @@ export default function CrearCuenta() {
           />
           <input
             type="tel"
-            required
-            placeholder="Teléfono*"
+            
+            placeholder="Teléfono"
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
             className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B]shadow-md"
