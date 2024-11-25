@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Importa useRouter
 
 export default function CrearCuenta() {
   const [nombre, setNombre] = useState("");
@@ -9,6 +10,7 @@ export default function CrearCuenta() {
   const [telefono, setTelefono] = useState("");
   const [password, setPassword] = useState("");
   const [mensaje, setMensaje] = useState(""); // Para mostrar mensajes de error o éxito
+  const router = useRouter(); // Inicializa useRouter
 
   const manejarEnvio = async (e) => {
     e.preventDefault(); // Evita que la página recargue
@@ -39,6 +41,8 @@ export default function CrearCuenta() {
       if (response.ok) {
         setMensaje(data.message); // Muestra el mensaje de éxito
         console.log("Usuario creado:", data.usuario);
+        // Redirige a la carpeta "inse" si la cuenta se crea con éxito
+        router.push("/inse");
       } else {
         setMensaje(data.error || "Ocurrió un error."); // Muestra el error si ocurre
       }
@@ -49,8 +53,8 @@ export default function CrearCuenta() {
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+    <section className="flex items-center justify-center min-h-screen  ">
+      <div className="w-full max-w-md p-6">
         <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
           <input
             type="text"
@@ -99,7 +103,7 @@ export default function CrearCuenta() {
           </button>
         </form>
         <a
-          href="/login"
+          href="/inse"
           className="flex items-center justify-center mt-3 text-sm underline text-center"
         >
           ¿Tienes una cuenta? ¡Inicia sesión!

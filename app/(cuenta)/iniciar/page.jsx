@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Importar el router para la redirección
 
 export default function IniciarCuenta() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [mensaje, setMensaje] = useState("");
-  const router = useRouter();
+  const [mensaje, setMensaje] = useState(""); // Para mostrar el mensaje de error o éxito
+  const router = useRouter(); // Inicializa el router para la redirección
 
   const manejarEnvio = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Evitar que la página se recargue
 
     try {
       const response = await fetch("/api/iniciarSesion", {
@@ -18,14 +18,18 @@ export default function IniciarCuenta() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, contrasena: password }),
+        body: JSON.stringify({
+          email,
+          contrasena: password,
+        }),
       });
 
       const data = await response.json();
+
       if (response.ok) {
         setMensaje("Inicio de sesión exitoso");
-        console.log("Usuario:", data.usuario);
-        router.push("/dashboard"); // Redirige al dashboard o página principal
+        console.log("Usuario:", data.usuario); // Procesar el usuario si es necesario
+        router.push("/"); // Redirigir a la página de inicio (home) tras inicio exitoso
       } else {
         setMensaje(data.error || "Ocurrió un error.");
       }
@@ -36,32 +40,36 @@ export default function IniciarCuenta() {
   };
 
   return (
-    <section className="flex align-center justify-center h-full">
-      <div className="flex gap-8 mt-40">
+    <section className="flex items-center justify-center min-h-screen p-4">
+      <div className="w-full max-w-md p-6 rounded-lg">
         <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
           <input
             type="email"
             required
-            placeholder="Email *"
+            placeholder="Email*"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-md"
           />
           <input
             type="password"
             required
-            placeholder="Contraseña *"
+            placeholder="Contraseña*"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 border border-[#80B48B] rounded-lg"
+            className="w-full p-2 text-sm border border-[#80B48B] rounded focus:outline-none focus:ring-2 focus:ring-[#80B48B] shadow-md"
           />
-          <input
+          <button
             type="submit"
-            value="Iniciar sesión"
-            className="p-3 bg-[#80B48B] text-white rounded-lg cursor-pointer hover:bg-[#6C9675]"
-          />
+            className="w-full bg-[#80B48B] text-white py-2 rounded hover:bg-[#6A9B74] transition duration-300 shadow-md"
+          >
+            Iniciar sesión
+          </button>
         </form>
-        {mensaje && <p className="mt-4 text-center">{mensaje}</p>}
+        <a href="./crear" className="flex items-center justify-center mt-3 text-sm underline text-center">
+          ¿No tienes una cuenta? ¡Créate una!
+        </a>
+        {mensaje && <p className="mt-4 text-center text-sm text-red-600">{mensaje}</p>}
       </div>
     </section>
   );
