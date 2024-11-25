@@ -8,11 +8,43 @@ export default function CrearCuenta() {
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [password, setPassword] = useState("");
+  
+  const manejarEnvio = async (e) => {
+    e.preventDefault(); // Evitar que la página recargue
+
+    try {
+      const response = await fetch("/api/crearCuenta", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre,
+          apellido,
+          email,
+          telefono,
+          contrasena: password, // Asegúrate de usar el mismo nombre que en tu back-end
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMensaje(data.message);
+        console.log("Usuario:", data.usuario);
+      } else {
+        setMensaje(data.error || "Ocurrió un error.");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+      setMensaje("Error al conectar con el servidor.");
+    }
+  };
 
   return (
     <section className="flex items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg ">
         <form className="flex flex-col gap-4">
+
           <input
             type="text"
             required

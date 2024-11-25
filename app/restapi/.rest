@@ -59,3 +59,13 @@ Content-Type: application/json
   "apellido": "BIEN",
   "telefono": 1234567890
 }
+
+###
+POST http://localhost:3000/api/iniciarSesion
+Content-Type: application/json
+
+{
+"email" : "ilan@gmail.com",
+"contrasena" : "1234"
+}
+ 

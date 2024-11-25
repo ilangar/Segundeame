@@ -36,7 +36,7 @@ export default function IA() {
         <ChatIA onSearch={handleSearch} />
         <div className="relative top-20 flex justify-center" >
           <p className="text-center rounded-lg py-4 px-6 bg-[#80B48B] w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] max-h-[425px] overflow-y-auto break-words border-[#80B48B] border-8"> 
-            {respuestaIA} 
+            {"Para hacer una mochila de jean reciclado, comenzá cortando las piernas del jean para obtener dos rectángulos grandes que serán las partes frontal y trasera, y una tira larga y ancha (de unos 15 cm de ancho) para los laterales y la base. Si querés bolsillos externos, usá los bolsillos traseros del jean, recortalos y cosélos en el rectángulo frontal. Después, colocá el rectángulo trasero sobre la mesa, uní con alfileres la tira larga que será el lateral y la base, rodeando todo el rectángulo, y cosé las piezas juntas. Luego, uní el rectángulo frontal al otro lado de la tira larga, asegurándote con alfileres antes de coser para formar la estructura básica. En la parte superior de la mochila, colocá un cierre para que puedas abrir y cerrar el compartimento principal. Para las correas, cortá dos tiras largas de jean o usá cinturones viejos, cosiendo un extremo en la parte superior trasera y el otro en la parte inferior trasera. Si querés un acabado más prolijo, podés agregar un forro interior con tela que se ajuste al tamaño de las piezas. ¡Y listo! Tu mochila estará terminada y lista para usar."} 
           </p>
         </div>
       </div>
