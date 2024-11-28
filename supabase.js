@@ -10,10 +10,10 @@ const supabase = createClient(
 export async function uploadFile(file) {
   try {
     const filePath = `uploads/${file.name}`;  // Usamos el nombre original del archivo
-
+    console.log(file);
     const { data, error } = await supabase.storage
       .from('fotos') // Asegúrate de usar el bucket correcto
-      .upload(filePath, file.buffer, {  // Cambiamos `file` por `file.buffer`
+      .upload(filePath, file, {  // Cambiamos `file` por `file.buffer`
         contentType: file.mimetype,  // Establecemos el tipo de contenido
         cacheControl: '3600',
         upsert: false,
