@@ -78,7 +78,7 @@ const BusquedaMateriales = ({ setMateriales }) => {
               >
                 <div className="w-full h-[150px] bg-gray-100 rounded-md mb-2">
                   <img
-                    src={material.imagen}
+                    src={material.fotoUrl}
                     alt={material.material}
                     className="w-full h-full object-cover rounded-md"
                   />
